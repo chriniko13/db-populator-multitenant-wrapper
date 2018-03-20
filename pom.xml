@@ -88,7 +88,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.chriniko.db.populator.example.Application</mainClass>
+                            <mainClass>com.chriniko.example.multitenant.wrapper.Application</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
