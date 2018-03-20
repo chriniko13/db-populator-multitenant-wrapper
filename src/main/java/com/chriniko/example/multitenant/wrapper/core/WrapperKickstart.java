@@ -26,7 +26,7 @@ public class WrapperKickstart {
 
     private static int TIME_BETWEEN_DB_POPULATOR_FIRE_IN_MS = 50;
 
-    private static final String DB_POPULATOR_RUN_COMMAND = "java -jar db-populator-example-1.0-SNAPSHOT.jar %s";
+    private static final String DB_POPULATOR_RUN_COMMAND = "java -jar db-populator-example-1.0-SNAPSHOT-jar-with-dependencies.jar %s";
 
     private final List<String> propertiesFilesAccumulator;
     private final ProcessManager processManager;
