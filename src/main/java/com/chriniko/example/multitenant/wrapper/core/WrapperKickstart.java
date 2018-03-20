@@ -23,6 +23,7 @@ import java.util.stream.IntStream;
 public class WrapperKickstart {
 
     private static final String DB_POPULATOR_PROPERTIES_FILE = "dbPopulatorForTenant%d.properties";
+
     private static int TIME_BETWEEN_DB_POPULATOR_FIRE_IN_MS = 50;
 
     private static final String DB_POPULATOR_RUN_COMMAND = "java -jar db-populator-example-1.0-SNAPSHOT.jar %s";
