@@ -16,16 +16,16 @@ public class PropertiesManager {
 
         try (InputStream inputStream = new FileInputStream(propertyFile)) {
 
-            Properties gameInjectorPropertiesFile = new Properties();
+            Properties dbPopulatorPropertiesFile = new Properties();
 
-            gameInjectorPropertiesFile.load(inputStream);
+            dbPopulatorPropertiesFile.load(inputStream);
 
-            return gameInjectorPropertiesFile;
+            return dbPopulatorPropertiesFile;
         }
     }
 
-    public String getJdbcUrl(Properties gameInjectorPropertiesFile) {
-        return (String) gameInjectorPropertiesFile.get(JDBC_URL);
+    public String getJdbcUrl(Properties dbPopulatorPropertiesFile) {
+        return (String) dbPopulatorPropertiesFile.get(JDBC_URL);
     }
 
 }
