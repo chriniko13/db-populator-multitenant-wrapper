@@ -97,11 +97,12 @@ public class WrapperKickstart {
         for (String propertyFile : propertiesFilesAccumulator) {
 
             // Note: fire off a db populator.
-            System.out.println("Will fire command: " + DB_POPULATOR_RUN_COMMAND);
+            String commandToFire = String.format(DB_POPULATOR_RUN_COMMAND, propertyFile);
+            System.out.println("Will fire command: " + commandToFire);
 
             Process dbPopulatorProcess = Runtime
                     .getRuntime()
-                    .exec(String.format(DB_POPULATOR_RUN_COMMAND, propertyFile));
+                    .exec(commandToFire);
 
             // Note: hold necessary info about fired off db populator.
             Properties dbPopulatorPropertiesFile = propertiesManager.loadProperties(propertyFile);
@@ -191,7 +192,7 @@ public class WrapperKickstart {
         final List<Boolean> dbPopulatorsStatuses = pidToProcessBindings
                 .keySet()
                 .stream()
-                .map(pid -> processManager.isProcessAlive(pid))
+                .map(processManager::isProcessAlive)
                 .collect(Collectors.toList());
 
         return dbPopulatorsStatuses.stream().noneMatch(Boolean.TRUE::equals);
